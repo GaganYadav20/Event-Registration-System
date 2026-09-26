@@ -29,30 +29,176 @@ const Home = () => {
     return (
         <div className="flex flex-col min-h-screen">
             {/* Hero Section */}
-            <div className="relative bg-black text-white rounded-3xl overflow-hidden mb-12 shadow-2xl">
-                <div className="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=3000&auto=format&fit=crop')] bg-cover bg-center"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
-                <div className="relative p-10 md:p-20 text-center flex flex-col items-center z-10">
-                    <span className="bg-white/20 text-white backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-white/20">Welcome to Eventora</span>
-                    <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tight drop-shadow-lg">
-                        Find Your Next <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500">Unforgettable</span> Experience
-                    </h1>
-                    <p className="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                        Discover the best tech conferences, late-night music festivals, and hands-on workshops happening directly in your area. Secure your spot today.
-                    </p>
+            {/* Hero Section */}
+            <section className="relative mb-16 overflow-hidden rounded-[2rem] bg-neutral-950 text-white shadow-2xl">
 
-                    <div className="w-full max-w-2xl mx-auto relative flex items-center shadow-2xl group">
-                        <FaSearch className="absolute left-6 text-gray-500 text-xl group-focus-within:text-black transition-colors" />
-                        <input
-                            type="text"
-                            placeholder="Search events by title..."
-                            className="w-full pl-16 pr-6 py-5 rounded-full text-lg text-black bg-white/95 backdrop-blur-sm border-2 border-transparent focus:border-gray-500 focus:outline-none transition-all placeholder-gray-400 font-medium"
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                        />
+                {/* Background Image */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center scale-105"
+                    style={{
+                        backgroundImage:
+                            "url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=85&w=2200')"
+                    }}
+                />
+
+                {/* Dark overlays */}
+                <div className="absolute inset-0 bg-black/65" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/30" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+
+                {/* Decorative glow */}
+                <div className="absolute -top-32 -right-32 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
+                <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+
+                <div className="relative z-10 px-6 py-16 md:px-14 lg:px-20 lg:py-24">
+
+                    <div className="max-w-4xl">
+
+                        {/* Badge */}
+                        <div className="inline-flex items-center gap-2 px-4 py-2 mb-7 rounded-full
+                            bg-white/10 border border-white/20 backdrop-blur-md
+                            text-sm font-semibold text-white shadow-lg">
+
+                            <span className="relative flex h-2.5 w-2.5">
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-400"></span>
+                            </span>
+
+                            Discover What's Happening
+                        </div>
+
+                        {/* Heading */}
+                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-7">
+                            Experience Events
+                            <br />
+
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">
+                                Worth Remembering.
+                            </span>
+                        </h1>
+
+                        {/* Description */}
+                        <p className="max-w-2xl text-base md:text-lg lg:text-xl text-gray-300
+                          leading-relaxed mb-9">
+                            Discover conferences, workshops, hackathons, concerts, and unforgettable
+                            experiences happening around you. Find your next event and secure your
+                            seat in seconds.
+                        </p>
+
+                        {/* Search */}
+                        <div className="flex flex-col sm:flex-row gap-3 max-w-2xl">
+
+                            <div className="relative flex-1 group">
+
+                                <FaSearch
+                                    className="absolute left-5 top-1/2 -translate-y-1/2
+                                   text-gray-400 text-lg
+                                   group-focus-within:text-black transition"
+                                />
+
+                                <input
+                                    type="text"
+                                    placeholder="Search events, workshops, conferences..."
+                                    className="w-full pl-14 pr-5 py-4 rounded-2xl
+                                   bg-white text-gray-900
+                                   placeholder-gray-400
+                                   border border-white/20
+                                   focus:outline-none
+                                   focus:ring-4 focus:ring-white/20
+                                   shadow-xl transition-all"
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                />
+
+                            </div>
+
+                            <button
+                                onClick={() =>
+                                    document
+                                        .getElementById('upcoming-events')
+                                        ?.scrollIntoView({ behavior: 'smooth' })
+                                }
+                                className="px-7 py-4 rounded-2xl
+                               bg-white text-black
+                               font-bold
+                               hover:bg-gray-100
+                               active:scale-95
+                               transition-all
+                               shadow-xl"
+                            >
+                                Explore Events
+                            </button>
+
+                        </div>
+
+                        {/* Category chips */}
+                        <div className="flex flex-wrap gap-2 mt-7">
+
+                            {[
+                                'Technology',
+                                'Business',
+                                'AI & ML',
+                                'Hackathons',
+                                'Workshops'
+                            ].map((category) => (
+                                <button
+                                    key={category}
+                                    onClick={() => setSearch(category)}
+                                    className="px-4 py-2 rounded-full
+                                   text-sm font-medium
+                                   bg-white/10
+                                   border border-white/10
+                                   backdrop-blur-md
+                                   text-gray-200
+                                   hover:bg-white
+                                   hover:text-black
+                                   transition-all"
+                                >
+                                    {category}
+                                </button>
+                            ))}
+
+                        </div>
+
                     </div>
+
+                    {/* Floating Stats */}
+                    <div className="hidden lg:flex absolute right-12 bottom-12 gap-4">
+
+                        <div className="bg-white/10 backdrop-blur-xl
+                            border border-white/15
+                            rounded-2xl px-6 py-5
+                            min-w-[140px] shadow-xl">
+
+                            <div className="text-3xl font-black">
+                                500+
+                            </div>
+
+                            <div className="text-sm text-gray-300 mt-1">
+                                Events
+                            </div>
+
+                        </div>
+
+                        <div className="bg-white/10 backdrop-blur-xl
+                            border border-white/15
+                            rounded-2xl px-6 py-5
+                            min-w-[140px] shadow-xl">
+
+                            <div className="text-3xl font-black">
+                                50K+
+                            </div>
+
+                            <div className="text-sm text-gray-300 mt-1">
+                                Attendees
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
-            </div>
+            </section>
 
             {/* Why Choose Us / Features row */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 px-4">

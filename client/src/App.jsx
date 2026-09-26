@@ -9,6 +9,7 @@ import UserDashboard from './pages/UserDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import PaymentSuccess from './pages/PaymentSuccess';
 import PaymentFailed from './pages/PaymentFailed';
+import Chatbot from "./pages/Chatbot";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                         <Route path="*" element={<h1 className="text-3xl font-bold text-center mt-20">404 - Page Not Found</h1>} />
                     </Routes>
                 </main>
+                <Chatbot />
             </div>
         </Router>
     );

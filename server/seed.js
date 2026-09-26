@@ -22,6 +22,186 @@ const users = [
 
 const events = [
     {
+        title: 'Global Leaders Business Summit',
+        description: 'A premium gathering of CEOs, founders, and investors discussing the future of global commerce and AI integration.',
+        date: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
+        location: 'The Ritz-Carlton, London',
+        category: 'Business',
+        totalSeats: 150,
+        availableSeats: 150,
+        ticketPrice: 5000,
+        image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'AI & Machine Learning Conference',
+        description: 'Explore the latest developments in artificial intelligence, machine learning, generative AI, and AI agents with industry experts.',
+        date: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000),
+        location: 'Bangalore International Convention Centre, Bangalore',
+        category: 'Technology',
+        totalSeats: 500,
+        availableSeats: 500,
+        ticketPrice: 1499,
+        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'CodeStorm Hackathon 2026',
+        description: 'A 24-hour coding hackathon where developers and students collaborate to build innovative technology solutions.',
+        date: new Date(Date.now() + 25 * 24 * 60 * 60 * 1000),
+        location: 'HITEX Exhibition Centre, Hyderabad',
+        category: 'Hackathon',
+        totalSeats: 300,
+        availableSeats: 300,
+        ticketPrice: 299,
+        image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'Full Stack Development Workshop',
+        description: 'A hands-on workshop covering React, Node.js, Express, MongoDB, REST APIs, authentication, and deployment.',
+        date: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+        location: 'Tech Park, Pune',
+        category: 'Workshop',
+        totalSeats: 100,
+        availableSeats: 100,
+        ticketPrice: 799,
+        image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'Startup India Entrepreneurship Summit',
+        description: 'Meet startup founders, entrepreneurs, investors, and industry leaders while exploring ideas, funding, and startup growth.',
+        date: new Date(Date.now() + 35 * 24 * 60 * 60 * 1000),
+        location: 'Jio World Convention Centre, Mumbai',
+        category: 'Entrepreneurship',
+        totalSeats: 600,
+        availableSeats: 600,
+        ticketPrice: 999,
+        image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'Cyber Security & Ethical Hacking Workshop',
+        description: 'Learn about cybersecurity, ethical hacking, network security, penetration testing, and modern cyber threats.',
+        date: new Date(Date.now() + 40 * 24 * 60 * 60 * 1000),
+        location: 'India Habitat Centre, New Delhi',
+        category: 'Cyber Security',
+        totalSeats: 200,
+        availableSeats: 200,
+        ticketPrice: 599,
+        image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'Career & Placement Fair 2026',
+        description: 'Connect with leading companies offering internships, graduate roles, and career opportunities across technology and business.',
+        date: new Date(Date.now() + 45 * 24 * 60 * 60 * 1000),
+        location: 'Pune University Campus, Pune',
+        category: 'Career',
+        totalSeats: 1000,
+        availableSeats: 1000,
+        ticketPrice: 0,
+        image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'Generative AI & LLM Workshop',
+        description: 'Learn how to build applications using large language models, prompt engineering, RAG, embeddings, and AI agents.',
+        date: new Date(Date.now() + 50 * 24 * 60 * 60 * 1000),
+        location: 'IIT Bombay, Mumbai',
+        category: 'Artificial Intelligence',
+        totalSeats: 250,
+        availableSeats: 250,
+        ticketPrice: 1299,
+        image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'Python & Data Science Bootcamp',
+        description: 'An intensive bootcamp covering Python, NumPy, Pandas, data visualization, machine learning, and real-world projects.',
+        date: new Date(Date.now() + 55 * 24 * 60 * 60 * 1000),
+        location: 'Symbiosis Institute of Technology, Pune',
+        category: 'Data Science',
+        totalSeats: 120,
+        availableSeats: 120,
+        ticketPrice: 699,
+        image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'Cloud Computing & DevOps Summit',
+        description: 'Discover cloud architecture, AWS, Docker, Kubernetes, CI/CD, microservices, and modern DevOps practices.',
+        date: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
+        location: 'Hinjewadi IT Park, Pune',
+        category: 'Cloud & DevOps',
+        totalSeats: 350,
+        availableSeats: 350,
+        ticketPrice: 899,
+        image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'React & Next.js Developer Meetup',
+        description: 'A developer meetup focused on React, Next.js, TypeScript, modern frontend architecture, APIs, and deployment.',
+        date: new Date(Date.now() + 65 * 24 * 60 * 60 * 1000),
+        location: 'WeWork, Kharadi, Pune',
+        category: 'Web Development',
+        totalSeats: 180,
+        availableSeats: 180,
+        ticketPrice: 399,
+        image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'AI Agents & Multi-Agent Systems Summit',
+        description: 'Discover autonomous AI agents, multi-agent orchestration, LangGraph, tool calling, RAG, and enterprise AI architectures.',
+        date: new Date(Date.now() + 70 * 24 * 60 * 60 * 1000),
+        location: 'Hyderabad International Convention Centre, Hyderabad',
+        category: 'Artificial Intelligence',
+        totalSeats: 400,
+        availableSeats: 400,
+        ticketPrice: 1599,
+        image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'College Cultural Fest 2026',
+        description: 'A large cultural festival featuring music, dance, drama, competitions, food, entertainment, and student activities.',
+        date: new Date(Date.now() + 75 * 24 * 60 * 60 * 1000),
+        location: 'College Ground, Pune',
+        category: 'Cultural',
+        totalSeats: 2000,
+        availableSeats: 2000,
+        ticketPrice: 100,
+        image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'Digital Marketing Masterclass',
+        description: 'Learn SEO, social media marketing, content strategy, Google Ads, analytics, and modern digital marketing techniques.',
+        date: new Date(Date.now() + 80 * 24 * 60 * 60 * 1000),
+        location: 'Taj Convention Centre, Mumbai',
+        category: 'Marketing',
+        totalSeats: 250,
+        availableSeats: 250,
+        ticketPrice: 499,
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
+        title: 'Free Tech Career Guidance Seminar',
+        description: 'A career guidance session covering software engineering, DSA, resume building, interviews, internships, and placement preparation.',
+        date: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+        location: 'G H Raisoni College, Pune',
+        category: 'Career',
+        totalSeats: 500,
+        availableSeats: 500,
+        ticketPrice: 0,
+        image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800'
+    },
+
+    {
         title: 'React & Node.js Developer Retreat',
         description: 'Join us for a 3-day deep dive into modern full-stack web development. Perfect for developers looking to take their skills to the next level.',
         date: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000), // 10 days from now
